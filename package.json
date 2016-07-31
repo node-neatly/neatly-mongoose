@@ -1,0 +1,17 @@
+{
+  "name": "neatly-mongoose",
+  "description": "mongooseProvider for neatly",
+  "author": [
+  	{
+  		"name" : "Christian Blaschke",
+  		"email" : "mail@platdesign.de",
+  		"url" : "https://github.com/platdesign"
+  	}
+  ],
+  "version": "0.0.0",
+  "dependencies": {
+    "mongoose": "4.x.x"
+  },
+  "repository": "git@github.com:node-neatly/neatly-mongoose.git",
+  "homepage":"https://github.com/node-neatly/neatly-mongoose"
+}
