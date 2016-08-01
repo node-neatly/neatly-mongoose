@@ -20,28 +20,31 @@ mod.provider('mongoose', function() {
 	// Service-Factory
 	this.$get = function($ext) {
 
-		if(!config) {
-			throw new Error('mongoose: Missing config');
-		}
-
-		if(!config.uri) {
-			throw new Error('mongoose: Missing uri');
-		}
-
 		if(!instance) {
 			instance = new Mongoose();
 		}
 
-		instance.Promise = global.Promise;
 
-		$ext('start', () => new Promise((resolve, reject) =>
+		$ext('start', () => new Promise((resolve, reject) => {
+
+			if(!config) {
+				throw new Error('mongoose: Missing config');
+			}
+
+			if(!config.uri) {
+				throw new Error('mongoose: Missing uri');
+			}
+
+			instance.Promise = global.Promise;
+
 			instance.connect(config.uri, config.options || {}, function(err, res) {
 				if(err) {
 					return reject(err);
 				}
 				resolve(res);
 			})
-		));
+
+		}));
 
 		return instance;
 	};
