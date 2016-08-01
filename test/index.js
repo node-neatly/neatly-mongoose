@@ -43,19 +43,14 @@ describe('neatly-mongoose', () => {
 
 		it('should return new mongoose instance as service', () => {
 
-			return init()
-				// Mock $ext to avoid registration of start-extension
-				// which would validate config and try to connect.
-				.start(($extProvider) => {
-					$extProvider.$get = () => () => true;
-				})
+			return init((mongooseProvider) => mongooseProvider.setConfig({ connectOnStart: false }))
+				.start()
 				.then((instance) => {
 
 					expect(instance.get('mongoose'))
 						.to.be.instanceOf(Mongoose);
 
 				});
-
 
 		});
 
@@ -66,7 +61,11 @@ describe('neatly-mongoose', () => {
 				test: 123
 			};
 
-			return init((mongooseProvider) => mongooseProvider.setInstance(myMongoose))
+			return init((mongooseProvider) => {
+				mongooseProvider
+					.setConfig({ connectOnStart: false })
+					.setInstance(myMongoose);
+			})
 				.start(($extProvider) => {
 					$extProvider.$get = () => () => true;
 				})
