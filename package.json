@@ -19,5 +19,8 @@
     "mocha": "^2.5.3",
     "neatly": "^0.2.0",
     "neatly-driller": "^0.0.2"
+  },
+  "scripts": {
+    "test":"mocha"
   }
 }
