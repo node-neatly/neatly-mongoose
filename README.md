@@ -2,6 +2,7 @@
 
 mongooseProvider for [neatly](https://www.npmjs.com/package/neatly).
 
+[![Build Status](https://travis-ci.org/node-neatly/neatly-mongoose.svg?branch=master)](https://travis-ci.org/node-neatly/neatly-mongoose)
 
 # Install
 
