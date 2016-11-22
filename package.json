@@ -16,7 +16,7 @@
   "repository": "git@github.com:node-neatly/neatly-mongoose.git",
   "homepage": "https://github.com/node-neatly/neatly-mongoose",
   "devDependencies": {
-    "code": "^3.0.2",
+    "code": "^4.0.0",
     "mocha": "^3.0.1",
     "neatly": "^0.2.0",
     "neatly-driller": "^0.0.3"
